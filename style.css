@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Monsieur+La+Doulaise&family=Updock&display=swap');
+
+:root {
+    --primary-color: #ffc0cb;
+    --secondary-color: #000;
+    --tertiary-color: #fff;
+    --fuente-updock: "Updock", serif;
+    --fuente-gentium: "Gentium Plus", serif;
+    --fuente-monsieur: "Monsieur La Doulaise", serif;
+    --fuente-bungee: "Bungee Shade", serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffc0cb;
+    color: #000;
+    text-align: center;
+    background-image: url('fondo.png');
+    background-size: cover;
+}
+
+main {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 5rem;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.titulo_principal {
+    font-family: var(--fuente-updock);
+    font-size: 5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+.titulo {
+    font-family: var(--fuente-updock);
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+.cursiva {
+    font-family: var(--fuente-monsieur);
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+img {
+    width: 75%;
+    max-height: auto;
+    -webkit-border-top-left-radius: 100px;
+    -webkit-border-bottom-right-radius: 100px;
+    -moz-border-radius-topleft: 100px;
+    -moz-border-radius-bottomright: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.countdown {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    font-family: var(--fuente-bungee);
+    font-size: 1.6rem;
+    margin: 20px 0;
+    color: var(--secondary-color);
+}
+
+.button {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+}
