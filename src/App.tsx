@@ -1,9 +1,11 @@
 "use client"
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MusicPlayer, { type MusicPlayerHandle } from './components/MusicPlayer';
+import ConfirmationModal from './components/ConfirmationModal';
+import { buscarInvitadoPorCodigo } from './data/invitados.js';
 // import { motion } from "framer-motion"
 import { MapPin, Clock } from "lucide-react"
 // import Navbar from "./components/Navbar"
@@ -16,6 +18,31 @@ gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const musicRef = useRef<MusicPlayerHandle>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentInvitado, setCurrentInvitado] = useState<any>(null);
+
+  // Obtener código de invitado desde la URL
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const codigo = urlParams.get('codigo');
+    
+    if (codigo) {
+      const invitado = buscarInvitadoPorCodigo(codigo);
+      if (invitado) {
+        setCurrentInvitado(invitado);
+      }
+    }
+  }, []);
+
+  const handleConfirmationClick = () => {
+    if (currentInvitado) {
+      setIsModalOpen(true);
+    } else {
+      // Si no hay invitado, redirigir directamente a WhatsApp
+      const whatsappUrl = `https://wa.me/7714385039`;
+      window.open(whatsappUrl, '_blank');
+    }
+  };
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -234,6 +261,79 @@ function App() {
             <div className="text-center">
               <span className="text-3xl sm:text-4xl">⏰💖⏰</span>
             </div>
+            <div className="text-center mt-4">
+              <button
+                onClick={() => {
+                  const eventDate = new Date('2025-11-29T18:00:00');
+                  const endDate = new Date('2025-11-29T23:00:00');
+                  
+                  // Detectar si es iOS/Safari para calendario nativo
+                  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                  
+                  if (isIOS) {
+                    // Para iOS - crear archivo .ics
+                    const formatDate = (date: Date) => {
+                      return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+                    };
+                    
+                    const icsContent = [
+                      'BEGIN:VCALENDAR',
+                      'VERSION:2.0',
+                      'PRODID:-//XV Años Andy//ES',
+                      'BEGIN:VEVENT',
+                      `DTSTART:${formatDate(eventDate)}`,
+                      `DTEND:${formatDate(endDate)}`,
+                      'SUMMARY:XV Años de Andy Mendoza',
+                      'DESCRIPTION:Celebración de los XV años de Andy Mendoza\\n\\nCeremonia: Parroquia La Divina Providencia - 18:00 hrs\\nRecepción: Salón Santa Sofia - 20:00 hrs\\n\\nCódigo de vestimenta: Época Victoriana',
+                      'LOCATION:Parroquia La Divina Providencia, Tulancingo',
+                      'BEGIN:VALARM',
+                      'TRIGGER:-P1M',
+                      'ACTION:DISPLAY',
+                      'DESCRIPTION:XV Años de Andy - Recordatorio 1 mes antes',
+                      'END:VALARM',
+                      'BEGIN:VALARM',
+                      'TRIGGER:-P1W',
+                      'ACTION:DISPLAY',
+                      'DESCRIPTION:XV Años de Andy - Recordatorio 1 semana antes',
+                      'END:VALARM',
+                      'BEGIN:VALARM',
+                      'TRIGGER:-P1D',
+                      'ACTION:DISPLAY',
+                      'DESCRIPTION:XV Años de Andy - Recordatorio 1 día antes',
+                      'END:VALARM',
+                      'END:VEVENT',
+                      'END:VCALENDAR'
+                    ].join('\r\n');
+                    
+                    const blob = new Blob([icsContent], { type: 'text/calendar' });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'xv-anos-andy.ics';
+                    link.click();
+                    URL.revokeObjectURL(url);
+                  } else {
+                    // Para otros navegadores - Google Calendar
+                    const googleCalendarUrl = new URL('https://calendar.google.com/calendar/render');
+                    googleCalendarUrl.searchParams.set('action', 'TEMPLATE');
+                    googleCalendarUrl.searchParams.set('text', 'XV Años de Andy Mendoza');
+                    googleCalendarUrl.searchParams.set('dates', '20251129T180000Z/20251129T230000Z');
+                    googleCalendarUrl.searchParams.set('details', 
+                      'Celebración de los XV años de Andy Mendoza\n\n' +
+                      'Ceremonia: Parroquia La Divina Providencia - 18:00 hrs\n' +
+                      'Recepción: Salón Santa Sofia - 20:00 hrs\n\n' +
+                      'Código de vestimenta: Época Victoriana'
+                    );
+                    googleCalendarUrl.searchParams.set('location', 'Parroquia La Divina Providencia, Tulancingo');
+                    
+                    window.open(googleCalendarUrl.toString(), '_blank');
+                  }
+                }}
+                className="btn-gold rounded-full transition-all duration-300 shadow-gold font-niconne text-lg px-6 py-3 inline-flex items-center gap-2"
+              >
+                📅 Agregar al Calendario
+              </button>
+            </div>
           </div>
         }
         bgPattern="circles"
@@ -395,17 +495,17 @@ function App() {
               <p className="text-3xl font-luxurious text-rose-600 mb-4 sm:mb-6">📅 Favor de confirmar antes del 15 de Octubre 📅</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+7714385039"
                   className="btn-elegant text-white rounded-full transition-all duration-300 shadow-rose font-niconne w-full sm:w-auto text-center"
                 >
-                  📞 Llamar: (123) 456-7890
+                  📞 Llamar: (771) 438-5039
                 </a>
-                <a
-                  href="https://wa.me/1234567890"
-                  className="btn-gold rounded-full transition-all duration-300 shadow-gold font-niconne w-full sm:w-auto text-center"
+                <button
+                  onClick={handleConfirmationClick}
+                  className="btn-gold rounded-full transition-all duration-300 shadow-gold font-niconne w-full sm:w-auto text-center px-6 py-3"
                 >
-                  💬 WhatsApp
-                </a>
+                  ✅ Confirmar Asistencia
+                </button>
               </div>
             </div>
           </div>
@@ -415,6 +515,13 @@ function App() {
       />
 
       <Footer />
+
+      {/* Modal de confirmación */}
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        invitado={currentInvitado}
+      />
     </main>
   );
 }
