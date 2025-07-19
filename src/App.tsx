@@ -24,7 +24,7 @@ function App() {
   // Obtener código de invitado desde la URL
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const codigo = urlParams.get('codigo');
+    const codigo = urlParams.get('c');
     
     if (codigo) {
       const invitado = buscarInvitadoPorCodigo(codigo);
@@ -90,8 +90,8 @@ function App() {
       })
       .to("#card-text", {
         duration: 5,
-        width: "90vw",
-        height: "90vh",
+        width: "70vw",
+        height: "70vh",
         ease: "power2.inOut",
       })
       .to("#card-text-div", {
