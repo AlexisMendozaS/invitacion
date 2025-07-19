@@ -120,7 +120,7 @@ function App() {
       <div
         id="text-desliza"
         title="Inicio"
-        className="sticky w-64 sm:w-72 md:w-80 text-center top-1/2 translate-y-20 left-1/2 -translate-x-[15%] md:-translate-x-1/2 text-2xl font-luxurious text-rose-600 bg-white/90 px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl z-2 animate-float shadow-rose border border-rose-200"
+        className="sticky w-64 sm:w-72 md:w-80 text-center top-1/2 translate-y-20 left-1/2 -translate-x-[25%] md:-translate-x-1/2 text-2xl font-luxurious text-rose-600 bg-white/90 px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl z-2 animate-float shadow-rose border border-rose-200"
       >
         ✨ Desliza para abrir ✨
       </div>
