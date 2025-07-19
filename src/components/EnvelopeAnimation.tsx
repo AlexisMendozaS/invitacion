@@ -14,7 +14,7 @@ export default function EnvelopeAnimation() {
       if (!sectionRef.current || !containerRef.current) return
 
       const section = sectionRef.current
-      const container = containerRef.current
+      // const container = containerRef.current
       const rect = section.getBoundingClientRect()
 
       // Si la carta está en el centro de la pantalla, se abre

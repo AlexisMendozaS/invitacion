@@ -5,7 +5,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MusicPlayer, { type MusicPlayerHandle } from './components/MusicPlayer';
 // import { motion } from "framer-motion"
-import { ChevronDown, MapPin, Clock } from "lucide-react"
+import { MapPin, Clock } from "lucide-react"
 // import Navbar from "./components/Navbar"
 // import EnvelopeAnimation from "./components/EnvelopeAnimation"
 import Section from "./components/Section"
