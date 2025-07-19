@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Fuentes personalizadas para XV años */
 @font-face {
   font-family: 'Fleur';
   src: url('/font/FleurDeLeah-Regular.woff2') format('woff2');
@@ -20,4 +21,329 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/* Variables CSS para paleta de colores XV años - Tonos pastel y metálicos */
+:root {
+  /* Rosas pastel */
+  --rose-50: #fef7f7;
+  --rose-100: #fdf0f0;
+  --rose-200: #f9e4e4;
+  --rose-300: #f5d0d0;
+  --rose-400: #ebb5b5;
+  --rose-500: #dc9999;
+  --rose-600: #c87878;
+  --rose-700: #a85c5c;
+  --rose-800: #8a4545;
+  --rose-900: #6d3535;
+  
+  /* Púrpuras pastel */
+  --purple-50: #faf7ff;
+  --purple-100: #f4f0ff;
+  --purple-200: #e8dfff;
+  --purple-300: #d7c7ff;
+  --purple-400: #c2a8ff;
+  --purple-500: #a888f0;
+  --purple-600: #9068dc;
+  --purple-700: #784cc8;
+  --purple-800: #603ba5;
+  --purple-900: #4a2d82;
+  
+  /* Metálicos elegantes */
+  --gold: #d4b886;
+  --gold-light: #f2e6c7;
+  --gold-dark: #b8a170;
+  --silver: #c0c0c0;
+  --silver-light: #e8e8e8;
+  --silver-dark: #a8a8a8;
+  --copper: #d4a574;
+  --copper-light: #e8c8a8;
+  --copper-dark: #b8915c;
+}
+
+/* Clases de utilidad para las fuentes */
+.font-fleur {
+  font-family: 'Fleur', cursive;
+}
+
+.font-luxurious {
+  font-family: 'Luxurious', cursive;
+}
+
+.font-niconne {
+  font-family: 'Niconne', cursive;
+}
+
+/* Efectos de gradiente para XV años - Mobile first */
+.gradient-rose {
+  background: linear-gradient(135deg, var(--rose-100) 0%, var(--rose-300) 50%, var(--rose-400) 100%);
+}
+
+.gradient-purple-rose {
+  background: linear-gradient(135deg, var(--purple-200) 0%, var(--rose-200) 50%, var(--rose-300) 100%);
+}
+
+.gradient-gold-rose {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--rose-100) 50%, var(--rose-200) 100%);
+}
+
+.gradient-text-rose {
+  background: linear-gradient(135deg, var(--rose-500) 0%, var(--purple-500) 50%, var(--rose-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--copper) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+  text-shadow: 0 1px 2px rgba(212, 184, 134, 0.3);
+}
+
+.gradient-text-metallic {
+  background: linear-gradient(135deg, var(--silver) 0%, var(--gold) 30%, var(--copper) 70%, var(--silver-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+}
+
+/* Fondo principal de la página - Mobile first */
+.main-background {
+  background: linear-gradient(180deg, 
+    var(--rose-50) 0%, 
+    var(--rose-100) 15%, 
+    var(--rose-200) 35%, 
+    var(--purple-100) 55%, 
+    var(--purple-200) 75%, 
+    var(--rose-300) 100%
+  );
+  min-height: 100vh;
+}
+
+/* Efectos de sombra y brillo - Mobile first */
+.shadow-rose {
+  box-shadow: 
+    0 4px 6px -1px rgba(220, 153, 153, 0.15), 
+    0 2px 4px -1px rgba(220, 153, 153, 0.1);
+}
+
+@media (min-width: 768px) {
+  .shadow-rose {
+    box-shadow: 
+      0 10px 15px -3px rgba(220, 153, 153, 0.2), 
+      0 4px 6px -2px rgba(220, 153, 153, 0.15);
+  }
+}
+
+.shadow-purple {
+  box-shadow: 
+    0 4px 6px -1px rgba(168, 136, 240, 0.15), 
+    0 2px 4px -1px rgba(168, 136, 240, 0.1);
+}
+
+@media (min-width: 768px) {
+  .shadow-purple {
+    box-shadow: 
+      0 10px 15px -3px rgba(168, 136, 240, 0.2), 
+      0 4px 6px -2px rgba(168, 136, 240, 0.15);
+  }
+}
+
+.shadow-gold {
+  box-shadow: 
+    0 4px 6px -1px rgba(212, 184, 134, 0.2), 
+    0 2px 4px -1px rgba(212, 184, 134, 0.15);
+}
+
+@media (min-width: 768px) {
+  .shadow-gold {
+    box-shadow: 
+      0 10px 15px -3px rgba(212, 184, 134, 0.25), 
+      0 4px 6px -2px rgba(212, 184, 134, 0.2);
+  }
+}
+
+/* Animaciones personalizadas */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(220, 153, 153, 0.3), 0 0 10px rgba(220, 153, 153, 0.2);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(220, 153, 153, 0.4), 0 0 15px rgba(220, 153, 153, 0.3);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Patrones de fondo - Mobile first responsive */
+.pattern-flowers {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(220, 153, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168, 136, 240, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(245, 208, 208, 0.08) 0%, transparent 50%);
+}
+
+.pattern-stars {
+  background-image: 
+    radial-gradient(1px 1px at 15px 25px, rgba(212, 184, 134, 0.6), transparent),
+    radial-gradient(1px 1px at 30px 55px, rgba(220, 153, 153, 0.4), transparent),
+    radial-gradient(0.5px 0.5px at 65px 30px, rgba(168, 136, 240, 0.5), transparent);
+  background-repeat: repeat;
+  background-size: 80px 80px;
+}
+
+@media (min-width: 768px) {
+  .pattern-stars {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, rgba(212, 184, 134, 0.6), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(220, 153, 153, 0.4), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(168, 136, 240, 0.5), transparent);
+    background-size: 120px 120px;
+  }
+}
+
+.pattern-diamonds {
+  background-image: 
+    linear-gradient(45deg, rgba(220, 153, 153, 0.08) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(220, 153, 153, 0.08) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(168, 136, 240, 0.08) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(168, 136, 240, 0.08) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+}
+
+@media (min-width: 768px) {
+  .pattern-diamonds {
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  }
+}
+
+.pattern-circles {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(245, 208, 208, 0.15) 30%, transparent 30%);
+  background-size: 60px 60px;
+}
+
+@media (min-width: 768px) {
+  .pattern-circles {
+    background-size: 80px 80px;
+  }
+}
+
+/* Estilos para tarjetas elegantes - Mobile first */
+.card-elegant {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(254, 247, 247, 0.85) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(220, 153, 153, 0.2);
+}
+
+@media (min-width: 768px) {
+  .card-elegant {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(254, 247, 247, 0.9) 100%);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.card-luxurious {
+  background: linear-gradient(135deg, rgba(254, 247, 247, 0.9) 0%, rgba(250, 247, 255, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 184, 134, 0.25);
+}
+
+@media (min-width: 768px) {
+  .card-luxurious {
+    background: linear-gradient(135deg, rgba(254, 247, 247, 0.95) 0%, rgba(250, 247, 255, 0.95) 100%);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(212, 184, 134, 0.3);
+  }
+}
+
+/* Botones elegantes - Mobile first */
+.btn-elegant {
+  background: linear-gradient(135deg, var(--rose-400) 0%, var(--purple-400) 100%);
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  .btn-elegant {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+.btn-elegant:hover {
+  background: linear-gradient(135deg, var(--rose-500) 0%, var(--purple-500) 100%);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+  .btn-elegant:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -3px rgba(220, 153, 153, 0.3);
+  }
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+  color: white;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .btn-gold {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -3px rgba(212, 184, 134, 0.3);
+  }
 }
