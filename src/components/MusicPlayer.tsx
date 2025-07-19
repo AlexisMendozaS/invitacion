@@ -6,6 +6,7 @@ import React, {
     forwardRef,
 } from 'react';
 import Circus from '../assets/Book-of-Circus-Black-Butler.mp3'
+import ladyCiel from '../assets/lady_ciel.webp'
 
 const TRACK = {
     url: Circus,
@@ -92,7 +93,7 @@ const MusicPlayer = forwardRef<MusicPlayerHandle>((_props, ref) => {
             {/* 🎵 Disco grande sin hover */}
             <div className="absolute -top-12 z-10 transition-all duration-300 opacity-100 animate-[spin_3s_linear_infinite] group-hover/he:opacity-0">
                 <img
-                    src="/src/assets/lady_ciel.webp"
+                    src={ladyCiel}
                     alt="Lady Ciel"
                     className="w-24 h-24 rounded-full object-cover shadow-lg"
                 />
@@ -101,7 +102,7 @@ const MusicPlayer = forwardRef<MusicPlayerHandle>((_props, ref) => {
             {/* 🎵 Disco pequeño giratorio en hover */}
             <div className="absolute -top-6 -left-6 z-40 opacity-0 group-hover/he:opacity-100 group-hover/he:animate-[spin_3s_linear_infinite] transition-all duration-300">
                 <img
-                    src="/src/assets/lady_ciel.webp"
+                    src={ladyCiel}
                     alt="Lady Ciel"
                     className="w-16 h-16 rounded-full object-cover shadow-md"
                 />
