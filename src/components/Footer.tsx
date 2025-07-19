@@ -21,7 +21,7 @@ export default function Footer() {
           
           <div className="bg-rose-50/70 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-rose-200">
             <p className="font-niconne text-sm sm:text-base md:text-lg text-rose-600">
-              📞 Para más información, contactar al: (123) 456-7890
+              📞 Para más información, contactar al: (771) 438-5039
             </p>
           </div>
         </div>
