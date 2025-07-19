@@ -78,12 +78,11 @@ function App() {
         padding: "28",
         ease: "power2.inOut",
       })
-      .to("#music-player", {
+      .to("#music-player-fixed", {
         opacity: 1,
         duration: 1,
-        marginTop: 80,
         ease: "power1.inOut",
-      }, "<") // con ">" se ejecuta justo después del anterior
+      }, "<") // con "<" se ejecuta al mismo tiempo que el anterior
       .to("#card-top", {
         duration: 1,
         opacity: 0,
@@ -115,6 +114,11 @@ function App() {
 
   return (
     <main className="main-background min-h-screen text-gray-800 pt-8 sm:pt-12 md:pt-16">
+      {/* Music Player - Fixed centrado en la parte superior */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 opacity-0" id="music-player-fixed">
+        <MusicPlayer ref={musicRef} />
+      </div>
+      
       {/* <Navbar /> */}
       {/* Mensaje "Desliza para abrir" - Mobile first */}
       <div
@@ -155,9 +159,7 @@ function App() {
               <p className="text-rose-600 w-full font-niconne text-xs sm:text-base md:text-lg">este día tan especial</p>
             </div>
             <p className="text-rose-700 font-luxurious text-xl sm:text-xl md:text-2xl gradient-text-gold">29 · 11 · 2025</p>
-            <div id="music-player" className="opacity-0 mt-2 sm:mt-3 md:mt-4">
-              <MusicPlayer ref={musicRef} />
-            </div>
+            {/* MusicPlayer ahora está fijo en la parte superior */}
           </div>
         </div>
       </section>
@@ -192,7 +194,7 @@ function App() {
           <div className="space-y-4 sm:space-y-6 text-center">
             <div className="card-elegant p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-rose">
               <p className="text-4xl sm:text-xl md:text-2xl font-luxurious gradient-text-rose mb-2">Isabel Sevilla Rivera</p>
-              <span className="text-rose-400 text-3xl sm:text-xl">y</span>
+              <span className="text-rose-400 text-3xl sm:text-xl font-luxurious">y</span>
               <p className="text-4xl sm:text-xl md:text-2xl font-luxurious gradient-text-rose mt-2">Andrés Mendoza Rosete</p>
             </div>
             <div className="text-center">
@@ -211,7 +213,7 @@ function App() {
           <div className="space-y-4 sm:space-y-6 text-center">
             <div className="card-elegant p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-purple">
               <p className="text-4xl sm:text-xl md:text-2xl font-luxurious gradient-text-rose mb-2">Araceli Jiménez Martínez</p>
-              <span className="text-purple-400 text-3xl sm:text-xl">y</span>
+              <span className="text-purple-400 text-3xl sm:text-xl font-luxurious">y</span>
               <p className="text-4xl sm:text-xl md:text-2xl font-luxurious gradient-text-rose mt-2">Jesús Sevilla Rivera</p>
             </div>
             <div className="text-center">
