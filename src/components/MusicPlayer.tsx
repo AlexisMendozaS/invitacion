@@ -5,9 +5,10 @@ import React, {
     useImperativeHandle,
     forwardRef,
 } from 'react';
+import Circus from '../assets/Book-of-Circus-Black-Butler.mp3'
 
 const TRACK = {
-    url: '/src/assets/Book-of-Circus-Black-Butler.mp3',
+    url: Circus,
     name: 'Book of Circus',
     artist: 'Black Butler OST',
 }
