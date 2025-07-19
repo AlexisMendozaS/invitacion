@@ -15,7 +15,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ isOpen, onClose, 
   if (!isOpen || !invitado) return null;
 
   const handleConfirm = () => {
-    const mensaje = `Confirmo mi asistencia ${invitado.nombre}`;
+    const mensaje = `Confirmo mi asistencia ${invitado.nombre} !!! `;
     const whatsappUrl = `https://wa.me/7714385039?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappUrl, '_blank');
     onClose();
@@ -58,7 +58,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ isOpen, onClose, 
             </div>
           </div>
 
-          <div className="text-center text-sm sm:text-base lg:text-lg text-gray-600 font-niconne px-2 leading-relaxed">
+          <div className="text-center text-2xl text-gray-600 font-niconne px-2 leading-relaxed">
             Al confirmar serás redirigido a WhatsApp para enviar tu confirmación
           </div>
         </div>
