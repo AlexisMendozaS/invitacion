@@ -74,7 +74,7 @@ export const invitados = [
   },
   {
     id: 10,
-    nombre: "Ricardo Lima",
+    nombre: "Ricardo Lira",
     mesa: 4,
     adultos: 3,
     niños: 0,
@@ -82,7 +82,7 @@ export const invitados = [
   },
   {
     id: 11,
-    nombre: "Maritha Vázquez",
+    nombre: "Martha Vázquez",
     mesa: 4,
     adultos: 4,
     niños: 0,
@@ -130,7 +130,7 @@ export const invitados = [
   },
   {
     id: 17,
-    nombre: "Karlos Encinas",
+    nombre: "Carlos Encinas",
     mesa: 7,
     adultos: 4,
     niños: 0,
@@ -162,7 +162,7 @@ export const invitados = [
   },
   {
     id: 21,
-    nombre: "Gpe Mendoza",
+    nombre: "Guadalupe Mendoza",
     mesa: 8,
     adultos: 4,
     niños: 0,
@@ -218,7 +218,7 @@ export const invitados = [
   },
   {
     id: 28,
-    nombre: "Gerardo Barrientos",
+    nombre: "Gelacio Barrientos",
     mesa: 11,
     adultos: 4,
     niños: 0,
