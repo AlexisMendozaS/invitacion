@@ -284,7 +284,7 @@ function App() {
                       `DTSTART:${formatDate(eventDate)}`,
                       `DTEND:${formatDate(endDate)}`,
                       'SUMMARY:XV Años de Andy Mendoza',
-                      'DESCRIPTION:Celebración de los XV años de Andy Mendoza\\n\\nCeremonia: Parroquia La Divina Providencia - 18:00 hrs\\nRecepción: Salón Santa Sofia - 20:00 hrs\\n\\nCódigo de vestimenta: Época Victoriana',
+                      'DESCRIPTION:Celebración de los XV años de Andy Mendoza\\n\\nCeremonia: Parroquia La Divina Providencia - 18:00 hrs\\nRecepción: Salón Santa Sofia - 19:00 hrs\\n\\nCódigo de vestimenta: Época Victoriana',
                       'LOCATION:Parroquia La Divina Providencia, Tulancingo',
                       'BEGIN:VALARM',
                       'TRIGGER:-P1M',
@@ -321,7 +321,7 @@ function App() {
                     googleCalendarUrl.searchParams.set('details', 
                       'Celebración de los XV años de Andy Mendoza\n\n' +
                       'Ceremonia: Parroquia La Divina Providencia - 18:00 hrs\n' +
-                      'Recepción: Salón Santa Sofia - 20:00 hrs\n\n' +
+                      'Recepción: Salón Santa Sofia - 19:00 hrs\n\n' +
                       'Código de vestimenta: Época Victoriana'
                     );
                     googleCalendarUrl.searchParams.set('location', 'Parroquia La Divina Providencia, Tulancingo');
@@ -393,7 +393,7 @@ function App() {
               <h2 className="text-5xl sm:text-2xl md:text-3xl font-luxurious gradient-text-metallic mb-3 sm:mb-4">Salón Santa Sofia</h2>
               <div className="flex items-center justify-center gap-2 text-rose-600 mb-3 sm:mb-4">
                 <Clock className="h-5 w-5 sm:h-6 sm:w-6" />
-                <p className="text-xl sm:text-lg md:text-xl font-niconne">29 de Noviembre de 2025 - 20:00 hrs</p>
+                <p className="text-xl sm:text-lg md:text-xl font-niconne">29 de Noviembre de 2025 - 19:00 hrs</p>
               </div>
               <div className="text-center mb-3 sm:mb-4">
                 <span className="text-3xl sm:text-4xl">🎉🥂🎉</span>
