@@ -309,7 +309,7 @@ function App() {
                     const url = URL.createObjectURL(blob);
                     const link = document.createElement('a');
                     link.href = url;
-                    link.download = 'xv-anos-andy.ics';
+                    link.download = 'xv-anios-andy.ics';
                     link.click();
                     URL.revokeObjectURL(url);
                   } else {
@@ -369,7 +369,7 @@ function App() {
             </div>
             <div className="text-center">
               <a
-                href="https://maps.app.goo.gl/8ZGjQZvZX8JQnSZS6"
+                href="https://maps.app.goo.gl/NcWaVYLChFRc4oBW6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-elegant inline-flex items-center gap-2 text-white rounded-full transition-all duration-300 shadow-rose font-niconne text-3xl"
