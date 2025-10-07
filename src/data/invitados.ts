@@ -95,22 +95,14 @@ export const invitados = [
   },
   {
     id: 12,
-    nombre: "Glecy Reyes Hernandez",
+    nombre: "Jose de Jesus Rodriguez Zarate",
     mesa: 5,
     adultos: 1,
     niños: 0,
-    codigo: "d7c5a947",
+    codigo: "8f4a6d21",
   },
   {
     id: 13,
-    nombre: "Fany Sarita Liberato",
-    mesa: 5,
-    adultos: 1,
-    niños: 0,
-    codigo: "b8e2f634",
-  },
-  {
-    id: 14,
     nombre: "Celeste Tenango Trejo",
     mesa: 5,
     adultos: 1,
@@ -118,7 +110,7 @@ export const invitados = [
     codigo: "a9f1c785",
   },
   {
-    id: 15,
+    id: 14,
     nombre: "Stacy Martinez Vazquez",
     mesa: 5,
     adultos: 3,
@@ -126,7 +118,7 @@ export const invitados = [
     codigo: "e4d8b293",
   },
   {
-    id: 16,
+    id: 15,
     nombre: "Anette Reyes Flores",
     mesa: 5,
     adultos: 4,
@@ -134,7 +126,7 @@ export const invitados = [
     codigo: "c6f9a158",
   },
   {
-    id: 17,
+    id: 16,
     nombre: "Mauricio Cortes Espinoza",
     mesa: 5,
     adultos: 1,
@@ -143,7 +135,7 @@ export const invitados = [
   },
   // Mesa 6
   {
-    id: 18,
+    id: 17,
     nombre: "Francisco Reyes",
     mesa: 6,
     adultos: 4,
@@ -151,7 +143,7 @@ export const invitados = [
     codigo: "0de7c81a",
   },
   {
-    id: 19,
+    id: 18,
     nombre: "Anahí Salguero",
     mesa: 6,
     adultos: 2,
@@ -159,7 +151,7 @@ export const invitados = [
     codigo: "61fd45ae",
   },
   {
-    id: 20,
+    id: 19,
     nombre: "Lizeth Damián Mora",
     mesa: 6,
     adultos: 2,
@@ -167,7 +159,7 @@ export const invitados = [
     codigo: "41e325a9",
   },
   {
-    id: 21,
+    id: 20,
     nombre: "Jorge Gozain",
     mesa: 6,
     adultos: 4,
@@ -175,7 +167,7 @@ export const invitados = [
     codigo: "799b2b3e",
   },
   {
-    id: 22,
+    id: 21,
     nombre: "Roberto Mendoza Rosete",
     mesa: 6,
     adultos: 2,
@@ -184,7 +176,7 @@ export const invitados = [
   },
   // Mesa 7
   {
-    id: 23,
+    id: 22,
     nombre: "Carlos Encinas",
     mesa: 7,
     adultos: 4,
@@ -192,7 +184,7 @@ export const invitados = [
     codigo: "b9a3cc67",
   },
   {
-    id: 24,
+    id: 23,
     nombre: "Karla Mendoza",
     mesa: 7,
     adultos: 2,
@@ -200,7 +192,7 @@ export const invitados = [
     codigo: "a6d44d52",
   },
   {
-    id: 25,
+    id: 24,
     nombre: "Ernesto Mendoza",
     mesa: 7,
     adultos: 4,
@@ -209,7 +201,7 @@ export const invitados = [
   },
   // Mesa 8
   {
-    id: 26,
+    id: 25,
     nombre: "Roberto Mendoza Ramírez",
     mesa: 8,
     adultos: 2,
@@ -217,7 +209,7 @@ export const invitados = [
     codigo: "e57ce93d",
   },
   {
-    id: 27,
+    id: 26,
     nombre: "Guadalupe Mendoza",
     mesa: 8,
     adultos: 4,
@@ -225,7 +217,7 @@ export const invitados = [
     codigo: "a726bc85",
   },
   {
-    id: 28,
+    id: 27,
     nombre: "Alejandro Mendoza",
     mesa: 8,
     adultos: 4,
@@ -233,7 +225,7 @@ export const invitados = [
     codigo: "5a4e98a7",
   },
   {
-    id: 29,
+    id: 28,
     nombre: "Mariano Mendoza",
     mesa: 8,
     adultos: 1,
@@ -242,15 +234,15 @@ export const invitados = [
   },
   // Mesa 9
   {
-    id: 30,
+    id: 29,
     nombre: "Isaías Bautista Hdez",
     mesa: 9,
-    adultos: 3,
-    niños: 0,
+    adultos: 5,
+    niños: 1,
     codigo: "d682178b",
   },
   {
-    id: 31,
+    id: 30,
     nombre: "Jaime Méndez Valentín",
     mesa: 9,
     adultos: 2,
@@ -258,7 +250,7 @@ export const invitados = [
     codigo: "4c9e282e",
   },
   {
-    id: 32,
+    id: 31,
     nombre: "Luis Serrano",
     mesa: 9,
     adultos: 3,
@@ -266,7 +258,7 @@ export const invitados = [
     codigo: "9f44d801",
   },
   {
-    id: 33,
+    id: 32,
     nombre: "Maribel Conde",
     mesa: 9,
     adultos: 3,
@@ -275,7 +267,7 @@ export const invitados = [
   },
   // Mesa 10
   {
-    id: 34,
+    id: 33,
     nombre: "Víctor González",
     mesa: 10,
     adultos: 7,
@@ -283,7 +275,7 @@ export const invitados = [
     codigo: "de18fc63",
   },
   {
-    id: 35,
+    id: 34,
     nombre: "Carlos Cruz",
     mesa: 10,
     adultos: 3,
@@ -292,7 +284,7 @@ export const invitados = [
   },
   // Mesa 11
   {
-    id: 36,
+    id: 35,
     nombre: "Gelacio Barrientos",
     mesa: 11,
     adultos: 4,
@@ -300,20 +292,28 @@ export const invitados = [
     codigo: "6b46f213",
   },
   {
-    id: 37,
+    id: 36,
     nombre: "Carlos Méndez",
     mesa: 11,
-    adultos: 5,
+    adultos: 3,
     niños: 0,
     codigo: "ab625f06",
   },
   {
-    id: 38,
+    id: 37,
     nombre: "Ricardo Tapia",
     mesa: 11,
     adultos: 2,
     niños: 0,
     codigo: "37628c57",
+  },
+  {
+    id: 38,
+    nombre: "Efren Mendez Morales",
+    mesa: 11,
+    adultos: 3,
+    niños: 0,
+    codigo: "5e9c4a78",
   },
   // Mesa 12
   {
