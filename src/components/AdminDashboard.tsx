@@ -210,9 +210,21 @@ export default function AdminDashboard() {
                     key={mesaNum}
                     className="border border-slate-700 bg-gray-100 p-4 flex flex-col"
                   >
-                    <h2 className="font-semibold border-b border-slate-700 mb-3 pb-1 text-center">
-                      MESA {mesaNum}
-                    </h2>
+                    <div className="flex items-center justify-center md:justify-center border-b border-slate-700 mb-3 pb-1">
+                      <h2 className="font-semibold text-center flex-1">MESA {mesaNum}</h2>
+                      <button
+                        type="button"
+                        className="md:hidden ml-2 px-3 py-1 bg-slate-700 text-white text-xs rounded hover:bg-slate-800 border border-slate-700"
+                        onClick={() => {
+                          setForm({ mesa: mesaNum, adultos: 1, niños: 0 });
+                          setEditingId(null);
+                          setShowModal(true);
+                        }}
+                        aria-label={`Agregar invitado a mesa ${mesaNum}`}
+                      >
+                        + Nuevo
+                      </button>
+                    </div>
 
                     {/* Responsive: tabla en PC, tarjetas en mobile */}
                     <div className="hidden md:block">
@@ -298,18 +310,61 @@ export default function AdminDashboard() {
               </button>
             </div>
             <form onSubmit={handleSubmit} className="space-y-3">
-              {["nombre", "mesa", "adultos", "niños"].map((field) => (
+              <div className="flex flex-col gap-2">
+                <label htmlFor="nombre" className="font-semibold text-xs mb-1">Nombre</label>
                 <input
-                  key={field}
-                  name={field}
-                  type={field === "nombre" ? "text" : "number"}
-                  placeholder={field.toUpperCase()}
-                  value={(form as any)[field] || ""}
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  placeholder="NOMBRE"
+                  value={form.nombre || ""}
                   onChange={handleChange}
                   required
                   className="w-full border border-slate-700 px-4 py-3 text-sm"
                 />
-              ))}
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="mesa" className="font-semibold text-xs mb-1">Mesa</label>
+                <input
+                  id="mesa"
+                  name="mesa"
+                  type="number"
+                  placeholder="MESA"
+                  value={form.mesa !== undefined ? form.mesa : 1}
+                  min={1}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-slate-700 px-4 py-3 text-sm"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="adultos" className="font-semibold text-xs mb-1">Adultos</label>
+                <input
+                  id="adultos"
+                  name="adultos"
+                  type="number"
+                  placeholder="ADULTOS"
+                  value={form.adultos !== undefined ? form.adultos : 1}
+                  min={0}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-slate-700 px-4 py-3 text-sm"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="niños" className="font-semibold text-xs mb-1">Niños</label>
+                <input
+                  id="niños"
+                  name="niños"
+                  type="number"
+                  placeholder="NIÑOS"
+                  value={form.niños !== undefined ? form.niños : 0}
+                  min={0}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-slate-700 px-4 py-3 text-sm"
+                />
+              </div>
               <div className="flex justify-end gap-2 pt-4 border-t border-slate-700">
                 <button
                   type="button"
