@@ -5,7 +5,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MusicPlayer, { type MusicPlayerHandle } from './components/MusicPlayer';
 import ConfirmationModal from './components/ConfirmationModal';
-import { buscarInvitadoPorCodigo } from './data/invitados.js';
+import { getInvitadoByCodigo } from './lib/supabaseClient';
 // import { motion } from "framer-motion"
 import { MapPin, Clock } from "lucide-react"
 // import Navbar from "./components/Navbar"
@@ -21,16 +21,16 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentInvitado, setCurrentInvitado] = useState<any>(null);
 
-  // Obtener código de invitado desde la URL
+  // Obtener código de invitado desde la URL y buscar en Supabase
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const codigo = urlParams.get('c');
-    
     if (codigo) {
-      const invitado = buscarInvitadoPorCodigo(codigo);
-      if (invitado) {
-        setCurrentInvitado(invitado);
-      }
+      getInvitadoByCodigo(codigo).then((invitado) => {
+        if (invitado) {
+          setCurrentInvitado(invitado);
+        }
+      });
     }
   }, []);
 
