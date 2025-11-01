@@ -5,7 +5,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-// CRUD para la tabla 'invitados'
+// CRUD para la tabla 'Invitados'
 export interface Invitado {
     id: number;
     created_at: string;
@@ -17,14 +17,14 @@ export interface Invitado {
     codigo: string;
 }
 
-// Obtener todos los invitados
+// Obtener todos los Invitados
 export async function getInvitados(): Promise<Invitado[] | null> {
     const { data, error } = await supabase
         .from('Invitados')
         .select('*')
         .order('mesa', { ascending: true });
     if (error) {
-        console.error('Error al obtener invitados:', error.message);
+        console.error('Error al obtener Invitados:', error.message);
         return null;
     }
     return data as Invitado[];
@@ -104,7 +104,7 @@ export async function deleteInvitado(id: number): Promise<boolean> {
 // Buscar invitado por código
 export async function getInvitadoByCodigo(codigo: string): Promise<Invitado | null> {
     const { data, error } = await supabase
-        .from('invitados')
+        .from('Invitados')
         .select('*')
         .eq('codigo', codigo)
         .single();
