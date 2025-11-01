@@ -492,7 +492,7 @@ function App() {
         content={
           <div className="space-y-4 sm:space-y-6">
             <div className="card-luxurious p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-rose text-center">
-              <p className="text-3xl font-luxurious text-rose-600 mb-4 sm:mb-6">📅 Favor de confirmar antes del 15 de Octubre 📅</p>
+              <p className="text-3xl font-luxurious text-rose-600 mb-4 sm:mb-6">📅 Favor de confirmar antes del 5 de Noviembre 📅</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <a
                   href="tel:+7714385039"
